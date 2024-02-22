@@ -1,4 +1,3 @@
-import 'package:company_finder/features/finder/data/dto/company_address_dto.dart';
 import 'package:company_finder/features/finder/data/dto/company_data_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 

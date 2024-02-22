@@ -4,6 +4,7 @@ import 'package:company_finder/features/finder/ui/components/search_input.dart';
 import 'package:company_finder/features/finder/ui/components/text_result_view.dart';
 import 'package:company_finder/features/finder/ui/cubit/finder_cubit.dart';
 import 'package:company_finder/features/finder/ui/cubit/finder_state.dart';
+import 'package:company_finder/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +14,8 @@ class FinderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return BlocProvider<FinderCubit>(
       create: (context) => FinderCubit(finderRepository: getIt<IFinderRepository>()),
       child: Scaffold(
@@ -28,8 +31,8 @@ class FinderScreen extends StatelessWidget {
                   child: BlocBuilder<FinderCubit, FinderState>(
                     builder: (context, state) => state.when(
                       initial: () => const SizedBox(),
-                      notFound: () => const TextResultView('Компании не найдены'),
-                      failed: () => const TextResultView('Компании не найдены'),
+                      notFound: () => TextResultView(s.companies_not_found_message),
+                      failed: () => TextResultView(s.common_error_message),
                       inProgress: () => const Center(child: CupertinoActivityIndicator()),
                       success: (companies) => ListView.builder(
                         itemBuilder: (context, index) {
@@ -37,7 +40,7 @@ class FinderScreen extends StatelessWidget {
 
                           return ListTile(
                             title: Text(company.name),
-                            subtitle: Text('ОГРН: ${company.ogrn}\nАдрес: ${company.address}'),
+                            subtitle: Text(s.company_info(company.ogrn, company.address)),
                           );
                         },
                         itemCount: companies.length,

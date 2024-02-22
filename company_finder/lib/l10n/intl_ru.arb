@@ -1,0 +1,7 @@
+{
+  "@@locale": "ru",
+  "enter_inn_hint": "Введите инн",
+  "companies_not_found_message": "Компании не найдены",
+  "common_error_message": "Что-то пошло не так",
+  "company_info": "ОГРН: {ogrn}\\nАдрес: {address}"
+}

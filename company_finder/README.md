@@ -1,16 +1,18 @@
-# company_finder
+# Company finder
 
-A new Flutter project.
+Тестовое задание на должность "Flutter разработчик"
 
-## Getting Started
+## Что нужно сделать
 
-This project is a starting point for a Flutter application.
+Сделать один экран с полем для ввода ИНН компании, используя сервис https://dadata.ru/
 
-A few resources to get you started if this is your first Flutter project:
+Вывести наименование компании, ОГРН, юридический адрес.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Инструменты
+- dio - сеть
+- intl - строки, локализация
+- flutter_bloc - state managment
+- json_serializable - сериализация
+- get_it, injectable - DI
+- freezed - иммутабельность состояний
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

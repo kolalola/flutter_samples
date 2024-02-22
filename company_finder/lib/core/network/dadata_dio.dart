@@ -6,12 +6,7 @@ class DadataDio {
   late final Dio dio;
 
   DadataDio() {
-    final options = BaseOptions(
-      baseUrl: 'http://suggestions.dadata.ru',
-      connectTimeout: const Duration(milliseconds: 15000),
-      receiveTimeout: const Duration(milliseconds: 7000),
-    );
-    dio = Dio(options);
+    dio = Dio(BaseOptions(baseUrl: 'http://suggestions.dadata.ru'));
   }
 
   void addInterceptor(Interceptor interceptor) {
